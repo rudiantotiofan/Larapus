@@ -179,6 +179,8 @@ return [
 
         //CollectiveHTML
         Collective\Html\HtmlServiceProvider::class,
+        //Role
+        Laratrust\LaratrustServiceProvider::class,
 
     ],
 
@@ -232,6 +234,9 @@ return [
         //CollectiveHTLM
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+
+        //Role
+        'Laratrust' => Laratrust\LaratrustFacade::class,
     ],
 
 ];
