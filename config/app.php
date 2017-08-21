@@ -181,6 +181,9 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         //Role
         Laratrust\LaratrustServiceProvider::class,
+        //Datatables
+        Yajra\Datatables\DatatablesServiceProvider::class,
+        
 
     ],
 
@@ -237,6 +240,8 @@ return [
 
         //Role
         'Laratrust' => Laratrust\LaratrustFacade::class,
+        //Datatables
+        'Datatables' => Yajra\Datatables\Facades\Datatables::class,
     ],
 
 ];

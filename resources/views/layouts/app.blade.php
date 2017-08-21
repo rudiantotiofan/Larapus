@@ -13,6 +13,9 @@
     <!-- Other Styles -->
     <link rel="stylesheet" href="{{ asset('css/font-awesome/font-awesome.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}">
+    {{--  Data Tables Styles  --}}
+    <link rel="stylesheet" href="{{ asset('css/datatables/jquery.dataTables.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/datatables/dataTables.bootstrap.css') }}">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -41,6 +44,7 @@
                     <ul class="nav navbar-nav">
                         @if (Auth::check())
                             <li><a href="{{ url('home') }}">Dashboard</a></li>
+                            <li><a href="{{ route('authors.index') }}">Penulis</a></li>
                         @endif
                     </ul>
 
@@ -82,5 +86,9 @@
     <!-- Scripts -->
     <script src="{{ asset('js/jquery/jquery-3.2.1.min.js') }}"></script>
     <script src="{{ asset('js/bootstrap/bootstrap.min.js') }}"></script>
+    {{--  Datatables Script  --}}
+    <script src="{{ asset('js/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('js/datatables/dataTables.bootstrap.min.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>
