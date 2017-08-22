@@ -5,7 +5,6 @@ use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-
 use App\Author;
 
 class AuthorsController extends Controller
@@ -16,12 +15,17 @@ class AuthorsController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function index()
+    public function index(Request $request)
     {
-        $author = Author::paginate(2);
-        return view('authors.index')->with(compact('author'));
+        $author = Author::where('name','like','%'.$request->keyword.'%')->paginate(2);
+        //$author = $request->keyword;
+        if($request->ajax()){
+            return view('authors.tables')->with(compact('author'));
+        }else{
+            return view('authors.index')->with(compact('author'));
+        }
+        
     }
-
     /**
      * Show the form for creating a new resource.
      *

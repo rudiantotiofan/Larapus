@@ -89,6 +89,18 @@
     {{--  Datatables Script  --}}
     <script src="{{ asset('js/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('js/datatables/dataTables.bootstrap.min.js') }}"></script>
-    @yield('scripts')
+    <script type="text/javascript">
+        function retrieve(){
+            var keyword = $('#search_key').val();
+            $.ajax({
+            type: "GET",
+            url: '{{route('dataAjax-country')}}',
+            data: {keyword:keyword},
+            success: function(result){
+                $('#ajax-tables').html(result);
+            }
+            });
+        }
+    </script>
 </body>
 </html>
